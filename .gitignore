@@ -1,0 +1,43 @@
+# ── Dependencies ──
+node_modules/
+
+# ── Environment variables (API keys, secrets) ──
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# ── Build output ──
+dist/
+build/
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── OS artifacts ──
+.DS_Store
+Thumbs.db
+
+# ── Logs ──
+*.log
+npm-debug.log*
+
+# ── Sanity studio build ──
+sanity/static/
+
+# ── OpenClaude / Claude Code config ──
+.openclaude/
+.claude/
+CLAUDE.md
+
+# ── Jupyter checkpoints ──
+.ipynb_checkpoints/
+
+# ── Generated files ──
+cv_output.pdf

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+.git/
+.env
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+# Ignore the portfolio videos/assets that don't help with coding
+assets/videos/
