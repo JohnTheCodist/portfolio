@@ -9,11 +9,11 @@ const STATS = [
 ];
 
 const PROOF = [
-  { label: "Excel", color: "#1D6F42", icon: "/public/icons/ms-excel-icon.svg" },
-  { label: "Power BI", color: "#F2C811", icon: "public/icons/power-bi-icon.svg" },
-  { label: "SQL", color: "#336791", icon: "public/icons/mysql-icon.svg" },
-  { label: "JavaScript", color: "#F7DF1E", icon: "public/icons/javascript-icon.svg" },
-  { label: "Python", color: "#3776AB", icon: "public/icons/python-icon.svg" },
+  { label: "Excel",      color: "#1D6F42", icon: "/icons/ms-excel-icon.svg" },
+  { label: "Power BI",   color: "#F2C811", icon: "/icons/power-bi-icon.svg" },
+  { label: "SQL",        color: "#336791", icon: "/icons/mysql-icon.svg" },
+  { label: "JavaScript", color: "#F7DF1E", icon: "/icons/javascript-icon.svg" },
+  { label: "Python",     color: "#3776AB", icon: "/icons/python-icon.svg" },
 ];
 const TAGS = ["Healthcare Analysis","Drug Supply Chains","Operational Data","Market Intelligence","Data Storytelling"];
 
