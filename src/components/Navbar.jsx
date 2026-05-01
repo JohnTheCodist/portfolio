@@ -96,7 +96,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile drawer */}
-      <div className={`mobile-drawer ${mobileOpen ? "open" : ""}`}>
+      <div className={`mobile-drawer ${mobileOpen ? "open" : ""}`} style={{ top: 64 }}>
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}

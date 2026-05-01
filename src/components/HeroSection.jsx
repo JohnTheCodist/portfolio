@@ -24,7 +24,7 @@ const stagger = { hidden:{}, show:{ transition:{ staggerChildren:0.1 } } };
 export default function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden min-h-screen grid lg:grid-cols-2"
+      className="relative overflow-hidden min-h-screen grid grid-cols-1 lg:grid-cols-2"
       style={{ background:"var(--bg)" }}
     >
       {/* Grid-line texture overlay */}
@@ -37,13 +37,13 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Orbs */}
-      <motion.div className="orb-cyan pointer-events-none absolute rounded-full"
+      {/* Orbs — hidden on mobile, they cause overflow */}
+      <motion.div className="orb-cyan pointer-events-none absolute rounded-full hidden md:block"
         style={{ width:560, height:560, top:"-80px", left:"-160px" }}
         animate={{ y:[0,-25,0], x:[0,20,0] }}
         transition={{ duration:10, repeat:Infinity, ease:"easeInOut" }}
       />
-      <motion.div className="orb-red pointer-events-none absolute rounded-full"
+      <motion.div className="orb-red pointer-events-none absolute rounded-full hidden md:block"
         style={{ width:700, height:700, bottom:"-200px", right:"-200px" }}
         animate={{ y:[0,22,0], x:[0,-18,0] }}
         transition={{ duration:13, repeat:Infinity, ease:"easeInOut", delay:1.5 }}
@@ -51,8 +51,8 @@ export default function HeroSection() {
 
       {/* ── LEFT ── */}
       <motion.div
-        className="flex flex-col justify-center px-10 lg:px-20 pt-28 pb-16 relative z-10"
-        style={{ borderRight:"1px solid var(--border-c)" }}
+        className="flex flex-col justify-center px-6 sm:px-10 lg:px-20 pt-28 pb-10 lg:pb-16 relative z-10 lg:border-r"
+        style={{ borderColor:"var(--border-c)" }}
         variants={stagger} initial="hidden" animate="show"
       >
         {/* Available pill */}
@@ -86,7 +86,7 @@ export default function HeroSection() {
 
         {/* Proof strip */}
         <motion.div variants={fadeUp}
-          className="grid grid-cols-4 mb-8"
+          className="grid grid-cols-3 sm:grid-cols-5 mb-8"
           style={{ border:"1px solid var(--border-c)", background:"var(--card)" }}>
           {PROOF.map(({ label, color, icon }, i) => (
   <div
@@ -104,9 +104,9 @@ export default function HeroSection() {
       alt={label}
      style={{
   position: "absolute",
-  width: 90,
-  height: 90,
-  opacity: 0.18,
+  width: 60,
+  height: 60,
+  opacity: 0.15,
   filter: "grayscale(1)",
   top: "50%",
   left: "50%",
@@ -142,7 +142,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* CTAs */}
-        <motion.div variants={fadeUp} className="flex gap-3">
+        <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
           <Link to="/projects" className="btn-primary">Explore Projects →</Link>
           <Link to="/essays"   className="btn-outline">Read Essays</Link>
         </motion.div>
@@ -150,7 +150,8 @@ export default function HeroSection() {
 
       {/* ── RIGHT ── */}
       <motion.div
-        className="flex flex-col justify-center px-10 lg:px-14 pt-20 pb-16 relative z-10"
+        className="flex flex-col justify-center px-6 sm:px-10 lg:px-14 pt-0 lg:pt-20 pb-16 relative z-10 border-t lg:border-t-0 lg:border-l"
+        style={{ borderColor:"var(--border-c)" }}
         variants={fadeR} initial="hidden" animate="show"
         transition={{ duration:0.75, delay:0.3 }}
       >
@@ -235,21 +236,21 @@ src="https://app.powerbi.com/view?r=eyJrIjoiZDUwM2MxYzQtYjZlYi00OTQ0LWI1NWEtYjRm
             </div>
 
             {/* Stats row */}
-            <div className="grid grid-cols-4" style={{ borderTop:"1px solid var(--border-c)" }}>
+            <div className="grid grid-cols-2 sm:grid-cols-4" style={{ borderTop:"1px solid var(--border-c)" }}>
               {STATS.map(({ value, label, accent }, i) => (
                 <motion.div key={label}
                   className="relative px-4 py-4"
                   style={{ borderLeft: i > 0 ? "1px solid var(--border-c)" : "none" }}
                   initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }}
                   transition={{ delay:0.6 + i * 0.07 }}>
-                  <p className="font-display font-extrabold" style={{
-                    fontSize:"1.2rem", lineHeight:1,
+                  <p className="font-display font-extrabold text-sm sm:text-base" style={{
+                    lineHeight:1,
                     color: accent || "var(--cyan)"
                   }}>
                     {value}
                   </p>
                   <p className="font-mono uppercase tracking-widest mt-1"
-                    style={{ fontSize:"0.5rem", color:"#5a5a72" }}>
+                    style={{ fontSize:"0.45rem", color:"#5a5a72" }}>
                     {label}
                   </p>
                 </motion.div>
@@ -258,7 +259,7 @@ src="https://app.powerbi.com/view?r=eyJrIjoiZDUwM2MxYzQtYjZlYi00OTQ0LWI1NWEtYjRm
           </div>
 
           {/* Context strip */}
-          <div className="flex items-center justify-between mt-4 pt-4"
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-4 pt-4"
             style={{ borderTop:"1px solid var(--border-c)" }}>
             <span className="font-mono uppercase tracking-widest"
               style={{ fontSize:"0.52rem", color:"#383848" }}>Last updated · Apr 2025</span>

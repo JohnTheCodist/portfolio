@@ -6,11 +6,11 @@ export default function EssayCard({ essay, index }) {
 
   return (
     <Link to={`/essays/${essay.slug}`} className="no-underline block">
-      <article className="essay-card gradient-border rounded-sm p-6 flex gap-5">
+      <article className="essay-card gradient-border rounded-sm p-4 sm:p-6 flex gap-3 sm:gap-5">
 
         <span
           className="font-display font-extrabold leading-none flex-shrink-0 select-none"
-          style={{ fontSize: "2rem", color: "var(--cyan)", opacity: 0.2 }}
+          style={{ fontSize: "1.4rem", color: "var(--cyan)", opacity: 0.25 }}
         >
           {String(index + 1).padStart(2, "0")}
         </span>

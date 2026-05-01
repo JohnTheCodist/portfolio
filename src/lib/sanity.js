@@ -6,4 +6,5 @@ export const sanity = createClient({
   apiVersion: "2024-01-01",
   useCdn:     true,
   token:      import.meta.env.VITE_SANITY_API_TOKEN    || undefined,
+   appId: 'wwjb22ukpl8ekc03eli5zg0d',
 });
