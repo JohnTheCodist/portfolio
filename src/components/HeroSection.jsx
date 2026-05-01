@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import excelIcon from "../assets/icons/ms-excel-icon.svg";
+import powerBiIcon from "../assets/icons/power-bi-icon.svg";
+import mysqlIcon from "../assets/icons/mysql-icon.svg";
+import jsIcon from "../assets/icons/javascript-icon.svg";
+import pythonIcon from "../assets/icons/python-icon.svg";
 
+const PROOF = [
+  { label: "Excel",      color: "#1D6F42", icon: excelIcon },
+  { label: "Power BI",   color: "#F2C811", icon: powerBiIcon },
+  { label: "SQL",        color: "#336791", icon: mysqlIcon },
+  { label: "JavaScript", color: "#F7DF1E", icon: jsIcon },
+  { label: "Python",     color: "#3776AB", icon: pythonIcon },
+];
 const STATS = [
   { value: "6,670",   label: "Total records",  accent: "cyan" },
   { value: "664", label: "Low Herfindahl-Hirschman Index",  accent: "#F59E0B" },
@@ -8,13 +20,6 @@ const STATS = [
   { value: "ACT",   label: "High Saturation Generics",  accent: "#F59E0B" },
 ];
 
-const PROOF = [
-  { label: "Excel",      color: "#1D6F42", icon: "/icons/ms-excel-icon.svg" },
-  { label: "Power BI",   color: "#F2C811", icon: "/icons/power-bi-icon.svg" },
-  { label: "SQL",        color: "#336791", icon: "/icons/mysql-icon.svg" },
-  { label: "JavaScript", color: "#F7DF1E", icon: "/icons/javascript-icon.svg" },
-  { label: "Python",     color: "#3776AB", icon: "/icons/python-icon.svg" },
-];
 const TAGS = ["Healthcare Analysis","Drug Supply Chains","Operational Data","Market Intelligence","Data Storytelling"];
 
 const fadeUp  = { hidden:{ opacity:0, y:20  }, show:{ opacity:1, y:0  } };
