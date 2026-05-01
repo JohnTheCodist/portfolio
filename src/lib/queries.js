@@ -106,7 +106,7 @@ export async function getProjectBySlug(slug) {
       keyFindings,
       nextSteps,
       embedUrl,
-      "fullReport": fullReport.asset->url
+      "fullReport": coalesce(fullReport.asset->url, "")
     }`,
     { slug }
   );
